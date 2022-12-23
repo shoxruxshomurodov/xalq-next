@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("assets/fonts/gilroy/fonts.css");
+@import url("assets/fonts/acram/acram-font.css");
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gilroy';
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ECECEC;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #013336;
+   border-radius: 13px;
+}
+
+
+/* .heading::after {
+  content: ' ';
+}
+.heading::before {
+  content: ' ';
+} */
+@layer components {
+    .banner-swiper .swiper-pagination-bullet {
+        @apply h-1.5 w-1.5 md:h-2 md:w-2 bg-gray-darker opacity-100;
+    }
+
+    .active__submenu {
+        @apply bg-primary-300 rounded-md text-white;
+    }
+
+    .banner-swiper .swiper-pagination-bullet-active {
+        @apply w-5 h-1.5 rounded-lg bg-primary-100 md:h-2 md:w-2;
+    }
+
+    .default-btn {
+        @apply min-w-[150px];
+    }
+
+    .heading {
+        @apply text-lg md:text-4xl relative mb-5 md:mb-20 before:hidden before:md:block before:content-[attr(before)] before:h-[1px] before:w-36 before:bg-black before:absolute before:right-full before:top-1/2 before:translate-y-1/2 before:mr-16
+        after:hidden after:md:block after:content-[attr(after)] after:h-[1px] after:w-36 after:bg-black after:absolute after:left-full after:top-1/2 after:translate-y-1/2 after:ml-16;
+    }
+
+    .credit-calc-slider .rc-slider-handle {
+        @apply bg-white !border-primary-300 opacity-100 border;
+    }
+
+    .credit-calc-slider .rc-slider-handle:active {
+        @apply shadow-none;
+    }
+
+    .credit-calc-slider .rc-slider-handle .rc-slider-handle-dragging {
+        @apply !shadow-none;
+    }
+
+    .credit-calc-slider .rc-slider-handle-dragging {
+        @apply !shadow-none;
+    }
+
+    .credit-calc-slider .rc-slider-handle:focus-visible {
+        @apply !shadow-none;
+    }
+
+    .credit-calc-slider .rc-slider-rail {
+        @apply bg-transparent w-[90%];
+    }
+
+    .credit-calc-slider .rc-slider-track {
+        @apply bg-primary-100 rounded-t-default rounded-b-none h-[3px];
+    }
+}

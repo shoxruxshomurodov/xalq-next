@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  app:
+    image: ${REGISTRY_URL}/${CONTAINER_NAME}-app:${APP_VERSION}.${BUILD_NUMBER}
+    container_name: ${CONTAINER_NAME}-app
+    build:
+      context: .
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+        HTTP_PROXY:  ${HTTP_PROXY}
+        NO_PROXY: ${NO_PROXY}
+    env_file: .env.dev
+    restart: always
+    ports:
+      - target: 3001
+        published: 3001
+        protocol: tcp
+        mode: host
+    deploy:
+      mode: replicated
+      replicas: 1
